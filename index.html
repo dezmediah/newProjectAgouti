@@ -18,22 +18,21 @@
     "\"It will probably be about thirty minutes.\"", "\"Firefly fornication.\"","\"Don't worry about it they're all in there.\"",
             "\"I'm not looking for just depression, but for any kind of sadness.\""]
     
+     function randomizer(array_name) {
+      array_name = array_name[Math.floor(Math.random()*array_name.length)];
+      return array_name;
+    }
+    
     questiona = '\"' + randomizer(interrogative) + ' does the ' + randomizer(noun2) + ' ' + randomizer(verb);
     questionb = '\"' + randomizer(interrogative2) + ' is the ' + randomizer(noun1) + ' of the ' + randomizer(noun2);
 
     question = [questiona, questionb]
                     
-            personselection = randomizer(person)
-            placeselection = randomizer(place)
-            questionselection = randomizer(question)
-            verb2selection = randomizer(verb2)
-            answerselection = randomizer(answer)
-
-
-    function randomizer(array_name) {
-      array_name = array_name[Math.floor(Math.random()*array_name.length)];
-      return array_name;
-    }
+            let personselection = randomizer(person)
+            let placeselection = randomizer(place)
+            let questionselection = randomizer(question)
+            let verb2selection = randomizer(verb2)
+            let answerselection = randomizer(answer)
     
     function myRefresh() { 
       setTimeout(function() {
@@ -60,7 +59,7 @@
         document.getElementById('line3').innerText = ''
         document.getElementById('line4').innerText = ''
         document.getElementById('line5').innerText = ''
-         setTimeout(function() {
+      setTimeout(function() {
         document.getElementById('line1').innerText = 'In the ' + placeselection + ', '
        }, 1000)
       setTimeout(function() {
