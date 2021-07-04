@@ -34,7 +34,25 @@
             let verb2selection = randomizer(verb2)
             let answerselection = randomizer(answer) 
     
-      function myRepeat() { 
+   function myRefresh() {
+     setTimeout(function() {
+        document.getElementById('line1').innerText = 'In the ' + placeselection + ', '
+       }, 1000)
+      setTimeout(function() {
+        document.getElementById('line2').innerText = 'there is ' + personselection + '.'
+       }, 2000)
+        setTimeout(function() {
+          document.getElementById('line3').innerText = questionselection + ', ' + personselection + '?\"'
+        },3000)
+      setTimeout(function() {
+        document.getElementById('line4').innerText = personselection + ' ' + verb2selection + '.'
+      },5000)
+      setTimeout(function() {
+        document.getElementById('line5').innerText = answerselection
+      },7000)
+      } 
+            
+   function myRepeat() { 
         document.getElementById('line1').innerText = ''
         document.getElementById('line2').innerText = ''
         document.getElementById('line3').innerText = ''
@@ -56,7 +74,8 @@
         document.getElementById('line5').innerText = answerselection
       },7000)
       }
-      setInterval(myRepeat,15000)
+      myRefresh()
+      setInterval(myRepeat,12000)
 
   </script>
 
