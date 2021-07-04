@@ -27,23 +27,30 @@
     questionb = '\"' + randomizer(interrogative2) + ' is the ' + randomizer(noun1) + ' of the ' + randomizer(noun2);
 
     question = [questiona, questionb]
+  
     
    function myRefresh() {
-     setTimeout(function() {
-        document.getElementById('line1').innerText = 'In the ' + randomizer(place) + ', '
+      let personselection = randomizer(person)
+      let placeselection = randomizer(place)
+      let questionselection = randomizer(question)
+      let verb2selection = randomizer(verb2)
+      let answerselection = randomizer(answer)
+
+       setTimeout(function() {
+       document.getElementById('line1').innerText = 'In the ' + placeselection + ', '
        }, 1000)
-      setTimeout(function() {
-        document.getElementById('line2').innerText = 'there is ' + randomizer(person) + '.'
+       setTimeout(function() {
+       document.getElementById('line2').innerText = 'there is ' + personselection + '.'
        }, 2000)
-        setTimeout(function() {
-          document.getElementById('line3').innerText = randomizer(question) + ', ' + randomizer(person) + '?\"'
-        },3000)
-      setTimeout(function() {
-        document.getElementById('line4').innerText = randomizer(person) + ' ' + randomizer(verb2) + '.'
-      },5000)
-      setTimeout(function() {
-        document.getElementById('line5').innerText = randomizer(answer)
-      },7000)
+       setTimeout(function() {
+       document.getElementById('line3').innerText = questionselection + ', ' + personselection + '?\"'
+       },3000)
+       setTimeout(function() {
+       document.getElementById('line4').innerText = personselection + ' ' + verb2selection + '.'
+       },5000)
+       setTimeout(function() {
+       document.getElementById('line5').innerText = answerselection
+        },7000)
       } 
             
    function myRepeat() { 
@@ -52,21 +59,7 @@
         document.getElementById('line3').innerText = ''
         document.getElementById('line4').innerText = ''
         document.getElementById('line5').innerText = ''
-        setTimeout(function() {
-          document.getElementById('line1').innerText = 'In the ' + randomizer(place) + ', '
-         }, 1000)
-        setTimeout(function() {
-          document.getElementById('line2').innerText = 'there is ' + randomizer(person) + '.'
-         }, 2000)
-          setTimeout(function() {
-            document.getElementById('line3').innerText = randomizer(question) + ', ' + randomizer(person) + '?\"'
-          },3000)
-        setTimeout(function() {
-          document.getElementById('line4').innerText = randomizer(person) + ' ' + randomizer(verb2) + '.'
-        },5000)
-        setTimeout(function() {
-          document.getElementById('line5').innerText = randomizer(answer)
-        },7000)
+        myRefresh()
         } 
       myRefresh()
       setInterval(myRepeat,12000)
