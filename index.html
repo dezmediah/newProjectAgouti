@@ -60,26 +60,10 @@
         document.getElementById('line3').innerText = ''
         document.getElementById('line4').innerText = ''
         document.getElementById('line5').innerText = ''
-     
-        setTimeout(function() {
-        document.getElementById('line1').innerText = 'In the ' + placeselection + ', '
-         }, 1000)
-        setTimeout(function() {
-        document.getElementById('line2').innerText = 'there is ' + personselection + '.'
-          }, 2000)
-        setTimeout(function() {
-          document.getElementById('line3').innerText = questionselection + ', ' + personselection + '?\"'
-          },3000)
-        setTimeout(function() {
-          document.getElementById('line4').innerText = personselection + ' ' + verb2selection + '.'
-        },5000)
-        setTimeout(function() {
-         document.getElementById('line5').innerText = answerselection
-        },7000)
-        
+       
         }
-      myRefresh();
-      setInterval(myRepeat,15000);
+      myRefresh()
+      setInterval(myRepeat,15000)
 
   </script>
 
