@@ -23,11 +23,11 @@
 
     question = [questiona, questionb]
                     
-            let personselection = randomizer(person)
-            let placeselection = randomizer(place)
-            let questionselection = randomizer(question)
-            let verb2selection = randomizer(verb2)
-            let answerselection = randomizer(answer)
+            personselection = randomizer(person)
+            placeselection = randomizer(place)
+            questionselection = randomizer(question)
+            verb2selection = randomizer(verb2)
+            answerselection = randomizer(answer)
 
 
     function randomizer(array_name) {
@@ -60,7 +60,21 @@
         document.getElementById('line3').innerText = ''
         document.getElementById('line4').innerText = ''
         document.getElementById('line5').innerText = ''
-       
+         setTimeout(function() {
+        document.getElementById('line1').innerText = 'In the ' + placeselection + ', '
+       }, 1000)
+      setTimeout(function() {
+        document.getElementById('line2').innerText = 'there is ' + personselection + '.'
+       }, 2000)
+        setTimeout(function() {
+          document.getElementById('line3').innerText = questionselection + ', ' + personselection + '?\"'
+        },3000)
+      setTimeout(function() {
+        document.getElementById('line4').innerText = personselection + ' ' + verb2selection + '.'
+      },5000)
+      setTimeout(function() {
+        document.getElementById('line5').innerText = answerselection
+      },7000)
         }
       myRefresh()
       setInterval(myRepeat,15000)
